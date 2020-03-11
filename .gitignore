@@ -7,3 +7,4 @@ kityminder-editor-master/ui/templates.js
 kityminder-editor-master/.tmp/
 kityminder-editor-master/upload/
 kmclient/node_modules/
+kmclient/build/
