@@ -1,0 +1,46 @@
+<div class="minder-editor-header">
+    <div class="header-menu" ng-click="showMenuFunc(this)">
+        <span class="header-menu-name">思维导图</span>
+        <span class="header-menu-caret"></span>
+    </div>
+    <div class="header-edit-btn" ng-click="tiggetEdit()">{{editName}}</div>
+    <div class="header-edit-btn" ng-click="saveFunc()">保存</div>
+
+    <div class="header-menu-bar" ng-class="{'menu-show': showMenu === true}">
+        <div class="menu-items">
+            <div class="menu-back" ng-click="hideMenu()">
+                <div class="menu-back-item">←</div>
+            </div>
+            <ul>
+                <li ng-repeat="x in names" ng-click="clickItem(x)" ng-class="{'active': currentItem === x}">
+                    {{ x }}
+                </li>
+            </ul>
+        </div>
+        <div class="menu-contents">
+            <div class="menu-content-panel" ng-class="{'active': currentItem === '打开'}">
+                <div class="menu-title">打开</div>
+                <div class="open-file" ng-click="openFile()"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> 浏览本地文件</div>
+                <div class="recent-file">最近访问文件</div>
+                <ul>
+                    <li ng-repeat="x in files" ng-click="openRecentFile(x)">
+                        <span class="glyphicon glyphicon-file" aria-hidden="true"></span> {{x.fileName}}
+                    </li>
+                </ul>
+            </div>
+            <div class="menu-content-panel" ng-class="{'active': currentItem === '另存为'}">
+                <div class="menu-title">另存为</div>
+                <div class="open-file" ng-click="saveAsNewFile()"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span> 另存为</div>
+                <div class="open-file" ng-click="saveAsMd()"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> 导出为Markdown</div>
+                <div class="open-file" ng-click="saveAsSvg()"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> 导出为SVG</div>
+                <div class="open-file" ng-click="saveAsPng()"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> 导出为PNG</div>
+            </div>
+            <div class="menu-content-panel" ng-class="{'active': currentItem === '关于'}">
+                <div class="menu-title">关于</div>
+                <div class="open-file">改自百度fex团队的kityminder-editor：https://github.com/fex-team/kityminder-editor</div>
+                <div class="open-file">基于electron：https://github.com/electron/electron</div>
+                <div class="open-file">改后代码地址：</div>
+            </div>
+        </div>
+    </div>
+</div>

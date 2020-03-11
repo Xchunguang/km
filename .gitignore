@@ -1,0 +1,9 @@
+.idea
+.DS_Store
+kityminder-editor-master/bower_components/
+kityminder-editor-master/node_modules/
+kityminder-editor-master/dist/
+kityminder-editor-master/ui/templates.js
+kityminder-editor-master/.tmp/
+kityminder-editor-master/upload/
+kmclient/node_modules/

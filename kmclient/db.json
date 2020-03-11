@@ -1,0 +1,47 @@
+{
+  "initStatus": true,
+  "recentFiles": [
+    {
+      "fileName": "建模任务 (1).km",
+      "path": "C:\\Users\\Administrator\\Downloads\\建模任务 (1).km"
+    },
+    {
+      "fileName": "建模任务.km",
+      "path": "C:\\Users\\Administrator\\Downloads\\建模任务.km"
+    },
+    {
+      "fileName": "建模任务 (2).km",
+      "path": "C:\\Users\\Administrator\\Downloads\\建模任务 (2).km"
+    },
+    {
+      "fileName": "button.json",
+      "path": "C:\\Users\\Administrator\\Downloads\\button.json"
+    },
+    {
+      "fileName": "建模任务3.km",
+      "path": "C:\\Users\\Administrator\\Downloads\\建模任务3.km"
+    },
+    {
+      "fileName": "建模任务4.km",
+      "path": "C:\\Users\\Administrator\\Downloads\\建模任务4.km"
+    },
+    {
+      "fileName": "建模任务5.km",
+      "path": "C:\\Users\\Administrator\\Downloads\\建模任务5.km"
+    },
+    {
+      "fileName": "建模任务5.md",
+      "path": "C:\\Users\\Administrator\\Downloads\\建模任务5.md"
+    },
+    {
+      "fileName": "思维导图.km",
+      "path": "C:\\Users\\13194\\Documents\\思维导图.km"
+    }
+  ],
+  "workspace": {
+    "path": "C:\\Users\\13194\\Documents\\思维导图.km",
+    "fileName": "思维导图.km",
+    "data": "{\"root\":{\"data\":{\"id\":\"c17tsgo7etc0\",\"created\":1583911566920,\"text\":\"财务课程\",\"expandState\":\"expand\"},\"children\":[{\"data\":{\"id\":\"c17z7lxmdu00\",\"created\":1583926859385,\"text\":\"会计\",\"layout_right_offset\":{\"x\":2,\"y\":6}},\"children\":[]},{\"data\":{\"id\":\"c17z7qb8a9c0\",\"created\":1583926868915,\"text\":\"safd\",\"expandState\":\"expand\"},\"children\":[{\"data\":{\"id\":\"c17z7xo8vvc0\",\"created\":1583926884939,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z7xqr3vs0\",\"created\":1583926885091,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z7xtbxg80\",\"created\":1583926885247,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z7xvnvx40\",\"created\":1583926885388,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z7xy6gdc0\",\"created\":1583926885540,\"text\":\"会计\",\"layout_right_offset\":{\"x\":10,\"y\":8}},\"children\":[{\"data\":{\"id\":\"c17z85qxli00\",\"created\":1583926902516,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z86ky3bc0\",\"created\":1583926904331,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z86ox7mo0\",\"created\":1583926904571,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z86rbf6o0\",\"created\":1583926904716,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z86tthsg0\",\"created\":1583926904867,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z86wi2mg0\",\"created\":1583926905029,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z86yzntc0\",\"created\":1583926905180,\"text\":\"会计\"},\"children\":[]}]},{\"data\":{\"id\":\"c17z7y0opxc0\",\"created\":1583926885691,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z7y338ts0\",\"created\":1583926885837,\"text\":\"会计\"},\"children\":[]}]},{\"data\":{\"id\":\"c17z7uyd0a80\",\"created\":1583926879021,\"text\":\"会计\",\"expandState\":\"collapse\"},\"children\":[{\"data\":{\"id\":\"c17z7vv6llc0\",\"created\":1583926881005,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z7wglqcw0\",\"created\":1583926882300,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z7wtyguo0\",\"created\":1583926883108,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z7x1dgns0\",\"created\":1583926883556,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z7x4xrl40\",\"created\":1583926883772,\"text\":\"会计\"},\"children\":[]},{\"data\":{\"id\":\"c17z7x7zhp40\",\"created\":1583926883956,\"text\":\"会计\"},\"children\":[]}]}]},\"template\":\"right\",\"theme\":\"fresh-blue\",\"version\":\"1.4.43\"}",
+    "edit": false
+  }
+}
