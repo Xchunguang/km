@@ -9,9 +9,12 @@
         npm install
 
 ## 启动
+
+cd kmclient
 npm run debug
 
 ## 调试
+
 先启动kityminder-editor-master
 
         cd kityminder-editor-master
@@ -27,12 +30,25 @@ npm run debug
 
         cd kityminder-editor-master
         grunt build --force
+        //将kityminder-editor-master/dist下的文件整理复制到kmclient/km/dist
 
         cd kmclient
-        npm install electron-packager -g
         npm run pack
 
-使用npm run pack时可能存在的问题：
+## 打包成asar
+
+        npm install asar -g
+        cd /kmclient/build/km-win32-x64/resources/
+        asar pack app app.asar
+        //生成的app.asar即可替代app文件夹
+
+## 打包成exe安装文件
+
+        使用Inno Setup 6：
+        软件下载：https://pc.qq.com/detail/13/detail_1313.html
+        配置参考：package/inno_build.iss
+
+## 使用npm run pack时可能存在的问题：
 - 下载election zip包时由于路径错误(多一个v)，报404错误
 解决方法：
     - npm config get prefix 查看npm安装路径
@@ -49,3 +65,7 @@ npm run debug
                 const file = mirrorVar('customFilename', opts, getArtifactFileName(details));
                 return `${base}${path}/${file}`;
         }
+
+## 打包后的文件位置
+链接：https://pan.baidu.com/s/1Gum5H3d2sdJuaihkI2DgLA 
+提取码：yr3v

@@ -7,12 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "debug": "electron . --debug",
-    "pack": "electron-packager . km --win --out ./build --arch=x64 --app-version=0.0.1 --electron-version=8.1.1 --icon=back64.ico"
+    "pack": "electron-packager . km --win --out ./build --arch=x64 --app-version=0.0.1 --electron-version=8.1.1 --icon=back64.ico",
+    "asar": "asar pack /kmclient/build/km-win32-x64/resources/app app.asar"
   },
   "author": "xuchg1",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^8.1.1"
+    "asar": "^3.0.0",
+    "electron": "^8.1.1",
+    "electron-packager": "^14.2.1"
   },
   "dependencies": {
     "lowdb": "^1.0.0"

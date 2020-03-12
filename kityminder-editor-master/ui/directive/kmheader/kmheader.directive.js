@@ -297,6 +297,7 @@ angular.module('kityminderEditor')
                 
                 changeTitle();
                 `;
+                //以上代码不参与编译，所以采用该方式
                 eval(js);
             }
         }
