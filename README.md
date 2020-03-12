@@ -66,6 +66,28 @@ npm run debug
                 return `${base}${path}/${file}`;
         }
 
+## 开发过程中可能需要对jQuery进行微调
+在electron容器里包含CommonJS导致jQuery不会注册到window上报错，可以暂时修改jQuery最后几行：
+
+        if ( !noGlobal ) {
+                window.jQuery = window.$ = jQuery;
+        }
+
+修改为：
+
+        window.jQuery = window.$ = jQuery;
+
+注意在生产环境无需修改jQuery，只需要在kityminder-editor-master打包后，修改jQuery的引入方式：
+
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+
+修改为：
+
+        <script>
+                window.jQuery = window.$ = require('../bower_components/jquery/dist/jquery.js');
+        </script>
+
+
 ## 打包后的文件位置
 链接：https://pan.baidu.com/s/1Gum5H3d2sdJuaihkI2DgLA 
 提取码：yr3v

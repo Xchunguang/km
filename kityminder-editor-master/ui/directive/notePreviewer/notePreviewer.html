@@ -1,1 +1,5 @@
-<div id="previewer-content" ng-show="showNotePreviewer" ng-style="previewerStyle" ng-bind-html="noteContent"></div>
+<div id="previewer-content" ng-show="showNotePreviewer" ng-style="previewerStyle">
+    <span class="glyphicon glyphicon-resize-full" ng-show="!fullScreen" ng-click="changeFullScreen(true)" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-resize-small" ng-show="fullScreen" ng-click="changeFullScreen(false)" aria-hidden="true"></span>
+    <div ng-bind-html="noteContent"></div>
+</div>

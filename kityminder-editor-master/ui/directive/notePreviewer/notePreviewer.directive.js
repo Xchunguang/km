@@ -10,6 +10,26 @@ angular.module('kityminderEditor')
 				var $container = element.parent();
 				var $previewer = element.children();
 				scope.showNotePreviewer = false;
+				scope.fullScreen = false;
+				scope.changeFullScreen = function(fullState){
+					scope.fullScreen = fullState;
+					if(fullState){
+						scope.previewerStyle = {
+							'width': '90%',
+							'height': '90%',
+							'left': '5%',
+							'top': '5%',
+							'z-index': 2002,
+							'max-width': '100%',
+							'max-height': '100%'
+						};
+					}else{
+						if(scope.styleCopy){
+							scope.previewerStyle = JSON.parse(JSON.stringify(scope.styleCopy));
+						}
+					}
+					scope.showNotePreviewer = true;
+				}
 
 				marked.setOptions({
                     gfm: true,
@@ -27,7 +47,7 @@ angular.module('kityminderEditor')
 
 					previewTimer = setTimeout(function() {
 						preview(e.node, e.keyword);
-					}, 300);
+					}, 200);
 				});
 				minder.on('hidenoterequest', function() {
 					clearTimeout(previewTimer);
@@ -78,6 +98,7 @@ angular.module('kityminderEditor')
 						'left': Math.round(x) + 'px',
 						'top': Math.round(y) + 'px'
 					};
+					scope.styleCopy = JSON.parse(JSON.stringify(scope.previewerStyle));
 
 					scope.showNotePreviewer = true;
 
