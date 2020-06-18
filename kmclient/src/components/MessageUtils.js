@@ -3,6 +3,8 @@
  * 拟定所有通讯都是由渲染线程发出，主线程返回内容，主线程类似服务
  */
 const {ipcMain,dialog} = require('electron');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
     init: function(status){
@@ -78,6 +80,41 @@ module.exports = {
                         break;
                     case 'getRecentFiles':
                         event.returnValue = this.status.getRecentFiles();
+                        break;
+                    case 'checkInsertPicture':
+                        if(this.status){
+                            if(!this.status.workspace.path || this.status.workspace.path.length === 0){
+                                const options = {
+                                    type: 'info',
+                                    title: '请先保存',
+                                    message: "当前尚未保存，请先保存文件",
+                                    buttons: ['确定']
+                                }
+                                dialog.showMessageBoxSync(options);
+                                event.returnValue = false;
+                            } else {
+                                event.returnValue = true;
+                            }
+                        } else {
+                            event.returnValue = false;
+                        }
+                        break;
+                    case 'insertPicture':
+                        let filePath = arg.path;
+                        let workPath = this.status.workspace.path;
+                        let afterPath = null;
+                        if(filePath && fs.existsSync(filePath)){
+                            let folderPath = path.dirname(fs.realpathSync(workPath));
+                            let fileName = path.basename(fs.realpathSync(filePath));
+                            let index = 1;
+                            afterPath = path.join(folderPath,index + fileName);
+                            while(fs.existsSync(afterPath)){
+                                index = index + 1;
+                                afterPath = path.join(folderPath,index + fileName);
+                            }
+                            fs.copyFileSync(filePath, afterPath);
+                        }
+                        event.returnValue = afterPath;
                         break;
                     default: 
                 }
