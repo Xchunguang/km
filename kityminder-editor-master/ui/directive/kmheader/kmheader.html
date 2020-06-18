@@ -25,6 +25,7 @@
                 <ul>
                     <li ng-repeat="x in files" ng-click="openRecentFile(x)">
                         <span class="glyphicon glyphicon-file" aria-hidden="true"></span> {{x.fileName}}
+                        <p style="font-size: 12px;">{{x.path}}</p>
                     </li>
                 </ul>
             </div>

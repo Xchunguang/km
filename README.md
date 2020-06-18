@@ -18,7 +18,7 @@ npm run debug
 先启动kityminder-editor-master
 
         cd kityminder-editor-master
-        grunt dev
+        grunt dev --force
 
 再启动kmclient
 

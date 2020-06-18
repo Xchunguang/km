@@ -3,7 +3,7 @@
 </div>
 <div class="modal-body">
     <tabset>
-        <tab heading="图片搜索">
+        <!-- <tab heading="图片搜索">
             <form class="form-inline">
                 <div class="form-group">
                     <label for="search-keyword">关键词：</label>
@@ -19,7 +19,7 @@
                     </li>
                 </ul>
             </div>
-        </tab>
+        </tab> -->
         <tab heading="外链图片">
             <form>
                 <div class="form-group" ng-class="{true: 'has-success', false: 'has-error'}[urlPassed]">
@@ -43,10 +43,9 @@
                 </div>
             </form>
         </tab>
-        <tab heading="上传图片" active="true">
+        <!-- <tab heading="上传图片" active="true">
             <form>
                 <div class="form-group">
-                    <!-- 这里不能用 ng-change -->
                     <input type="file" name="upload-image" id="upload-image" class="upload-image" accept=".jpg,.JPG,jpeg,JPEG,.png,.PNG,.gif,.GIF" onchange="angular.element(this).scope().uploadImage()"/>
                     <label for="upload-image" class="btn btn-primary"><span>选择文件&hellip;</span></label>
                 </div>
@@ -59,7 +58,7 @@
                     <img class="image-preview" id="image-preview" ng-src="{{ data.url }}" title="{{ data.title }}" alt="{{ data.title }}"/>
                 </div>
             </form>
-        </tab>
+        </tab> -->
     </tabset>
 
 </div>

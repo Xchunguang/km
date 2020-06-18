@@ -13,6 +13,42 @@ angular.module('kityminderEditor')
 				var isInteracting = false;
 				var cmEditor;
 
+				$scope.fullScreen = false;
+				$scope.changeFullScreen = function(status){
+					$scope.fullScreen = status;
+				}
+				var insertValue = function(value){
+					$scope.noteContent += value;
+					$scope.$apply();
+				}
+				$scope.insertPicture = function(){
+					let re = new RegExp("\\\\","g");
+					var js = `
+					const {ipcRenderer,remote} = require('electron');
+               		const dialog = remote.dialog;					
+					let canDo = ipcRenderer.sendSync('render-message', {type: 'checkInsertPicture'});
+					if(canDo){
+						dialog.showOpenDialog({
+                            title: '选择文件',
+                            properties: ['openFile'],
+                            filters: [
+								{ name: '图片', extensions: ['jpg', 'png'] },
+								{ name: '所有文件', extensions: ['*'] }
+                            ]
+                        }).then(result => {
+							if(!result.canceled && result.filePaths && result.filePaths.length > 0){
+								let file = result.filePaths[0];
+								let res = ipcRenderer.sendSync('render-message', {type: 'insertPicture', path: file});
+								insertValue('![img](file:///'+res.replace(re,'/')+')');
+							}
+						}).catch(err => {
+							console.log(err)
+						});
+					}
+					`;
+					eval(js);
+				}
+
 				$scope.codemirrorLoaded =  function(_editor) {
 
 					cmEditor = $scope.cmEditor = _editor;
