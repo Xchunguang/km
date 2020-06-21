@@ -25,6 +25,7 @@ function createWindow () {
     win.webContents.openDevTools();
     win.loadURL('http://localhost:3000/index.html');
   }else{
+    win.webContents.openDevTools();
     win.loadFile('./km/dist/index.html')
   }
 

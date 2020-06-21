@@ -17,6 +17,11 @@ angular.module('kityminderEditor')
 				$scope.changeFullScreen = function(status){
 					$scope.fullScreen = status;
 				}
+				$scope.previewNote = function(){
+					if(editor){
+						editor.minder.fire('shownoterequest',{node: editor.minder.getSelectedNode(), ifMax: true})
+					}
+				}
 				var insertValue = function(value){
 					$scope.noteContent += value;
 					$scope.$apply();
@@ -53,7 +58,7 @@ angular.module('kityminderEditor')
 
 					cmEditor = $scope.cmEditor = _editor;
 
-					_editor.setSize('100%', '100%');
+					_editor.setSize('100%', 'calc(100% - 41px)');
 				};
 
 				function updateNote() {

@@ -18,7 +18,7 @@ angular.module('kityminderEditor')
 							'width': '90%',
 							'height': '90%',
 							'left': '5%',
-							'top': '5%',
+							'top': '3%',
 							'z-index': 2002,
 							'max-width': '100%',
 							'max-height': '100%'
@@ -46,7 +46,7 @@ angular.module('kityminderEditor')
 				minder.on('shownoterequest', function(e) {
 
 					previewTimer = setTimeout(function() {
-						preview(e.node, e.keyword);
+						preview(e.node, e.keyword, e.ifMax);
 					}, 200);
 				});
 				minder.on('hidenoterequest', function() {
@@ -60,6 +60,7 @@ angular.module('kityminderEditor')
 				$(document).on('mousedown mousewheel DOMMouseScroll', function() {
 					if (!previewLive) return;
 					scope.showNotePreviewer = false;
+					scope.fullScreen = false;
 					scope.$apply();
 				});
 
@@ -67,7 +68,7 @@ angular.module('kityminderEditor')
 					e.stopPropagation();
 				});
 
-				function preview(node, keyword) {
+				function preview(node, keyword, ifMax) {
 					var icon = node.getRenderer('NoteIconRenderer').getRenderShape();
 					var b = icon.getRenderBox('screen');
 					var note = node.getData('note');
@@ -107,6 +108,19 @@ angular.module('kityminderEditor')
 						view.scrollIntoView();
 					}
 					previewLive = true;
+
+					if(ifMax){
+						scope.fullScreen = true;
+						scope.previewerStyle = {
+							'width': '90%',
+							'height': '90%',
+							'left': '5%',
+							'top': '3%',
+							'z-index': 2002,
+							'max-width': '100%',
+							'max-height': '100%'
+						};
+					}
 
 					scope.$apply();
 				}
