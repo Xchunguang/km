@@ -23,8 +23,9 @@ angular.module('kityminderEditor')
 					}
 				}
 				var insertValue = function(value){
-					$scope.noteContent += value;
-					$scope.$apply();
+					if(cmEditor){
+						cmEditor.doc.replaceSelection(value);
+					}
 				}
 				$scope.insertPicture = function(){
 					let re = new RegExp("\\\\","g");
@@ -44,7 +45,7 @@ angular.module('kityminderEditor')
 							if(!result.canceled && result.filePaths && result.filePaths.length > 0){
 								let file = result.filePaths[0];
 								let res = ipcRenderer.sendSync('render-message', {type: 'insertPicture', path: file});
-								insertValue('![img](file:///'+res.replace(re,'/')+')');
+								insertValue('![img](/'+res+')');
 							}
 						}).catch(err => {
 							console.log(err)
