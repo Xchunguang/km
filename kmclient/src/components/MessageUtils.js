@@ -104,10 +104,10 @@ module.exports = {
                         let workPath = this.status.workspace.path;
                         let afterPath = null;
                         let fileName = null;
+                        let index = 1;
                         if(filePath && fs.existsSync(filePath)){
                             let folderPath = path.dirname(fs.realpathSync(workPath));
                             fileName = path.basename(fs.realpathSync(filePath));
-                            let index = 1;
                             afterPath = path.join(folderPath,index + fileName);
                             while(fs.existsSync(afterPath)){
                                 index = index + 1;
@@ -115,7 +115,7 @@ module.exports = {
                             }
                             fs.copyFileSync(filePath, afterPath);
                         }
-                        event.returnValue = fileName;
+                        event.returnValue = index + fileName;
                         break;
                     default: 
                 }
